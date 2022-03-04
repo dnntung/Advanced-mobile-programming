@@ -4,6 +4,7 @@ String jsonRaw =
     '{ "id": 1, "url": "https://via.placeholder.com/600/92c952&quot;"}';
 
 class ImageModel {
+  // Null-aware
   int? id;
   String? url;
 
@@ -26,7 +27,7 @@ void main() {
   // print(jsonObject['id']);
   // print(jsonObject['url']);
 
-  var image1 = ImageModel(jsonObject['id'], jsonObject['url']);
+  // var image1 = ImageModel(jsonObject['id'], jsonObject['url']);
   var image2 = ImageModel.fromJson(jsonObject);
   print(image2);
 }
