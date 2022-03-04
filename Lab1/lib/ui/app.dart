@@ -42,7 +42,7 @@ class AppState extends State<App> {
     var appWidget = new MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text('Image Viewer - v0.0.8'),
+        title: Text('Image Viewer'),
       ),
       // body: Text('Display list of images here. counter = $counter'),
       body: ListView.builder(
