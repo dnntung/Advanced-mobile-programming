@@ -58,15 +58,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   getStreamContent() async {
-    stream
-      ..getWord().listen((word) => setState(() {
-            print(word ?? "");
+    stream.getWord().listen((word) => setState(() {
+          print(word ?? "");
+          this.counter++;
 
-            this.word = word ?? "";
-          }))
-      ..countWord().listen((counter) => setState(() {
-            this.counter = counter ?? 0;
-          }));
+          this.word = word ?? "";
+        }));
   }
 
   @override
