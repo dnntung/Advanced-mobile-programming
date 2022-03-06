@@ -44,26 +44,5 @@
             "type": "dart",
             "flutterMode": "release"
         },
-        {
-            "name": "Lab2",
-            "cwd": "Lab2",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-        {
-            "name": "Lab2 (profile mode)",
-            "cwd": "Lab2",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "Lab2 (release mode)",
-            "cwd": "Lab2",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        }
     ]
 }

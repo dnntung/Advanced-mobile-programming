@@ -24,8 +24,10 @@ class MyCustomFormState extends State<MyCustomForm> {
   bool isEmail(value) => RegExp(
           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
       .hasMatch(value);
-  bool isValidBirthYear(value) =>
-      DateTime(value).isBefore(DateTime.now()) && value != DateTime.now().year;
+  bool isValidBirthYear(int value) {
+    return DateTime(value).isBefore(DateTime.now()) &&
+        value != DateTime.now().year;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,11 +71,14 @@ class MyCustomFormState extends State<MyCustomForm> {
             // The validator receives the text that the user has entered.
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Vui lòng nhập năm sinh';
+                return 'Vui lòng nhập năm sinh!';
               }
-
-              if (!isValidBirthYear(int.parse(value))) {
-                return 'Năm sinh không hợp lệ';
+              try {
+                if (!isValidBirthYear(int.parse(value))) {
+                  return 'Năm sinh không hợp lệ!';
+                }
+              } catch (err) {
+                return "Năm sinh không hợp lệ!";
               }
 
               return null;
