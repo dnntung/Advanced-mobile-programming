@@ -1,0 +1,69 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Lab1",
+            "cwd": "Lab1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Lab1 (profile mode)",
+            "cwd": "Lab1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "Lab1 (release mode)",
+            "cwd": "Lab1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Lab1--Advanced",
+            "cwd": "Lab1--Advanced",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "Lab1--Advanced (profile mode)",
+            "cwd": "Lab1--Advanced",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "Lab1--Advanced (release mode)",
+            "cwd": "Lab1--Advanced",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Lab2",
+            "cwd": "Lab2",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Lab2 (profile mode)",
+            "cwd": "Lab2",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "Lab2 (release mode)",
+            "cwd": "Lab2",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
