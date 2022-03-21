@@ -20,6 +20,11 @@ class Chats extends StatefulWidget {
 }
 
 class _ChatsState extends State<Chats> {
+  static const avatarUrl =
+      "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/240120172_1018783688953234_6482622079438608942_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=aiLx1ymJy2wAX835e7D&_nc_ht=scontent.fsgn5-8.fna&oh=00_AT-R81wkKDob6y7i-RBO3PUl9y6qHnraYL9i-CWmU3yV3g&oe=623C1619";
+
+  _onAvatarPressed() => {};
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -29,6 +34,19 @@ class _ChatsState extends State<Chats> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: const Text("Chats"),
+          titleTextStyle:
+              const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+          toolbarHeight: 80,
+          leading: IconButton(
+              onPressed: _onAvatarPressed,
+              icon: const CircleAvatar(
+                backgroundImage: NetworkImage(avatarUrl),
+              ))),
       body: Column(
         children: [],
       ),
@@ -41,6 +59,7 @@ class _ChatsState extends State<Chats> {
         selectedLabelStyle: const TextStyle(color: Colors.blue),
         items: const [
           BottomNavigationBarItem(
+            backgroundColor: Colors.transparent,
             icon: Icon(Icons.chat_bubble),
             label: 'Chats',
           ),
