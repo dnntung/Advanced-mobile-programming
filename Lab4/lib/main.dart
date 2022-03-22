@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messenger_ui_clone/screens/home_screen/index.dart';
 import 'package:messenger_ui_clone/views/chats.dart';
 
 void main() {
@@ -15,9 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'messenger_ui_clone',
       theme:
           ThemeData(primarySwatch: Colors.blue, backgroundColor: Colors.black),
-      home: const Chats(
-        title: "Chats",
-      ),
+      home: const HomeScreen(),
     );
   }
 }
