@@ -15,46 +15,49 @@ class TopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return AppBar(
-      backgroundColor: Colors.black,
-      toolbarHeight: 80,
-      leading: IconButton(
-          onPressed: _onAvatarTapped,
-          icon: const CircleAvatar(
-            backgroundImage: NetworkImage(avatarUrl),
-          )),
-      title: Text(title),
-      titleTextStyle:
-          const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-      actions: [
-        Row(
-          children: [
-            Ink(
-              decoration: ShapeDecoration(
-                shape: CircleBorder(),
-                color: Colors.white.withOpacity(0.1),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 8),
+      child: AppBar(
+        backgroundColor: Colors.black,
+        toolbarHeight: 64,
+        leading: IconButton(
+            onPressed: _onAvatarTapped,
+            icon: const CircleAvatar(
+              backgroundImage: NetworkImage(avatarUrl),
+            )),
+        title: Text(title),
+        titleTextStyle: const TextStyle(
+            fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+        actions: [
+          Row(
+            children: [
+              Ink(
+                decoration: ShapeDecoration(
+                  shape: CircleBorder(),
+                  color: Colors.white.withOpacity(0.1),
+                ),
+                child: IconButton(
+                    splashColor: Colors.transparent,
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    onPressed: _onToggleCamera,
+                    icon: const Icon(Icons.camera_alt)),
               ),
-              child: IconButton(
-                  splashColor: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  onPressed: _onToggleCamera,
-                  icon: const Icon(Icons.camera_alt)),
-            ),
-            SizedBox(width: 8),
-            Ink(
-              decoration: ShapeDecoration(
-                shape: CircleBorder(),
-                color: Colors.white.withOpacity(0.1),
-              ),
-              child: IconButton(
-                  splashColor: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  onPressed: _onCreateChatRoom,
-                  icon: const Icon(Icons.edit)),
-            )
-          ],
-        )
-      ],
+              SizedBox(width: 8),
+              Ink(
+                decoration: ShapeDecoration(
+                  shape: CircleBorder(),
+                  color: Colors.white.withOpacity(0.1),
+                ),
+                child: IconButton(
+                    splashColor: Colors.transparent,
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    onPressed: _onCreateChatRoom,
+                    icon: const Icon(Icons.edit)),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }

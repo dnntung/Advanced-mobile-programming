@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:messenger_ui_clone/screens/home_screen/pages/chats.dart';
+import 'package:messenger_ui_clone/views/chats.dart';
 import 'package:messenger_ui_clone/widgets/top_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -32,14 +34,12 @@ class ScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(80),
+        preferredSize: Size.fromHeight(64),
         child: TopBar(
           title: "Chats",
         ),
       ),
-      body: Column(
-        children: [],
-      ),
+      body: ChatsPage(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
         showUnselectedLabels: true,
