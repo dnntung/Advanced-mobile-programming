@@ -32,27 +32,13 @@ class ActiveContactListState extends State<ActiveContactList> {
       "avatarUrl":
           "https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-1/275065191_997295441214032_789963114803147407_n.jpg?stp=dst-jpg_p100x100&_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=KUWjpd2SErUAX-OPLyt&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn3-1.fna&oh=00_AT9gBLjVroIUtTFb_Gld8QOyWm117mWvyhKkyx8NJGEVrA&oe=623DFD0D",
     },
-    {
-      "label": "Huỳnh Khôi",
-      "avatarUrl":
-          "https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-1/275065191_997295441214032_789963114803147407_n.jpg?stp=dst-jpg_p100x100&_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=KUWjpd2SErUAX-OPLyt&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn3-1.fna&oh=00_AT9gBLjVroIUtTFb_Gld8QOyWm117mWvyhKkyx8NJGEVrA&oe=623DFD0D",
-    },
-    {
-      "label": "Huỳnh Khôi",
-      "avatarUrl":
-          "https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-1/275065191_997295441214032_789963114803147407_n.jpg?stp=dst-jpg_p100x100&_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=KUWjpd2SErUAX-OPLyt&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn3-1.fna&oh=00_AT9gBLjVroIUtTFb_Gld8QOyWm117mWvyhKkyx8NJGEVrA&oe=623DFD0D",
-    },
-    {
-      "label": "Huỳnh Khôi",
-      "avatarUrl":
-          "https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-1/275065191_997295441214032_789963114803147407_n.jpg?stp=dst-jpg_p100x100&_nc_cat=107&ccb=1-5&_nc_sid=7206a8&_nc_ohc=KUWjpd2SErUAX-OPLyt&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn3-1.fna&oh=00_AT9gBLjVroIUtTFb_Gld8QOyWm117mWvyhKkyx8NJGEVrA&oe=623DFD0D",
-    },
   ];
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 8),
       height: 96,
       child: ListView(
         scrollDirection: Axis.horizontal,

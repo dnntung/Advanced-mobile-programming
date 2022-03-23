@@ -14,12 +14,58 @@ class HomeScreen extends StatefulWidget {
 
 class ScreenState extends State<HomeScreen> {
   final _pages = [
-    {"title": "Chats", "icon": Icons.chat_bubble, "content": Chats()},
-    {"title": "Calls", "icon": Icons.video_call, "content": Calls()},
+    {
+      "title": "Chats",
+      "icon": Icons.chat_bubble,
+      "content": Chats(),
+      "badgeContent": 1,
+      "actions": [
+        Ink(
+          decoration: ShapeDecoration(
+            shape: CircleBorder(),
+            color: Colors.white.withOpacity(0.1),
+          ),
+          child: IconButton(
+              splashColor: Colors.transparent,
+              constraints: BoxConstraints(minHeight: 36, minWidth: 36),
+              iconSize: 20,
+              onPressed: () => {},
+              icon: const Icon(Icons.camera_alt)),
+        ),
+        SizedBox(width: 8),
+        Ink(
+          decoration: ShapeDecoration(
+            shape: CircleBorder(),
+            color: Colors.white.withOpacity(0.1),
+          ),
+          child: IconButton(
+              splashColor: Colors.transparent,
+              onPressed: () => {},
+              iconSize: 20,
+              constraints: BoxConstraints(minHeight: 36, minWidth: 36),
+              icon: const Icon(Icons.edit)),
+        )
+      ],
+    },
     {
       "title": "People",
       "icon": Icons.people,
       "content": People(),
+      "actions": [
+        Ink(
+          decoration: ShapeDecoration(
+            shape: CircleBorder(),
+            color: Colors.white.withOpacity(0.1),
+          ),
+          child: IconButton(
+              splashColor: Colors.transparent,
+              onPressed: () => {},
+              iconSize: 20,
+              constraints: BoxConstraints(minHeight: 36, minWidth: 36),
+              icon: const Icon(Icons.contacts)),
+        )
+      ],
+      "badgeContent": 5,
       "badgeColor": Color(0xFF191919),
       "badgeTextColor": Colors.white54
     },
@@ -39,6 +85,9 @@ class ScreenState extends State<HomeScreen> {
         preferredSize: Size.fromHeight(64),
         child: TopBar(
           title: _pages.elementAt(_selectedIndex)["title"] as String,
+          actions: _pages.elementAt(_selectedIndex)?["actions"] != null
+              ? _pages.elementAt(_selectedIndex)["actions"] as List<Widget>
+              : [],
         ),
       ),
       body: _pages.elementAt(_selectedIndex)["content"] as Widget,
@@ -59,13 +108,16 @@ class ScreenState extends State<HomeScreen> {
                     badgeColor: page["badgeColor"] != null
                         ? page["badgeColor"] as Color
                         : Colors.red,
+                    showBadge: page?["badgeContent"] != null,
                     child: Icon(page["icon"] as IconData),
-                    badgeContent: Text("2",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: page["badgeTextColor"] != null
-                                ? page["badgeTextColor"] as Color
-                                : Colors.white)),
+                    badgeContent: page?["badgeContent"] != null
+                        ? Text(page["badgeContent"].toString(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: page["badgeTextColor"] != null
+                                    ? page["badgeTextColor"] as Color
+                                    : Colors.white))
+                        : null,
                   ),
                   label: page["title"] as String,
                 ),
