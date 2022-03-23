@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_ui_clone/screens/home_screen/index.dart';
-import 'package:messenger_ui_clone/views/chats.dart';
 
 void main() {
   runApp(const MyApp());

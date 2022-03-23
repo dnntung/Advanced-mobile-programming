@@ -38,7 +38,8 @@ class ChatRoomListState extends State<ChatRoomList> {
       "subtitle": "u",
       "avatarUrl":
           "https://scontent.fsgn8-2.fna.fbcdn.net/v/t1.6435-1/202356886_1419522361730313_2007673927745043631_n.jpg?stp=dst-jpg_p100x100&_nc_cat=105&ccb=1-5&_nc_sid=7206a8&_nc_ohc=jytPmzvcQC4AX_vXNlv&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn8-2.fna&oh=00_AT9X2Gg66CnZP7j029gf9V5V7leoyNO1Wf0gkdifsYwKCg&oe=625FD49A",
-      "didRead": true
+      "didRead": true,
+      "lastActive": "14m"
     },
     {
       "title": "Huỳnh Khôi",
@@ -55,12 +56,12 @@ class ChatRoomListState extends State<ChatRoomList> {
     return ListView(
         children: chatRooms
             .map((room) => ChatRoomItem(
-                  title: room?["title"],
-                  subtitle: room?["subtitle"],
-                  avatarUrl: room?["avatarUrl"],
-                  didRead: room?["didRead"],
-                  isActive: room?["isActive"],
-                ))
+                title: room?["title"],
+                subtitle: room?["subtitle"],
+                avatarUrl: room?["avatarUrl"],
+                didRead: room?["didRead"],
+                isActive: room?["isActive"],
+                lastActive: room?["lastActive"]))
             .toList());
   }
 }
