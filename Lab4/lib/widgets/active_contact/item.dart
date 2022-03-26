@@ -30,12 +30,17 @@ class ActiveContactItem extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               child: CircleAvatar(
                 radius: 28,
-                child: icon != null ? Icon(icon, size: 32,) : null,
+                child: icon != null
+                    ? Icon(
+                        icon,
+                        size: 32,
+                      )
+                    : null,
                 foregroundColor: Colors.white,
-                backgroundColor: Colors.white.withOpacity(0.2),
+                backgroundColor: Color.fromRGBO(36, 36, 37, 1),
                 backgroundImage: icon == null
                     ? NetworkImage(avatarUrl ??
-                    "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/240120172_1018783688953234_6482622079438608942_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=aiLx1ymJy2wAX835e7D&_nc_ht=scontent.fsgn5-8.fna&oh=00_AT-R81wkKDob6y7i-RBO3PUl9y6qHnraYL9i-CWmU3yV3g&oe=623C1619")
+                        "https://scontent.fsgn5-8.fna.fbcdn.net/v/t39.30808-6/240120172_1018783688953234_6482622079438608942_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=aiLx1ymJy2wAX835e7D&_nc_ht=scontent.fsgn5-8.fna&oh=00_AT-R81wkKDob6y7i-RBO3PUl9y6qHnraYL9i-CWmU3yV3g&oe=623C1619")
                     : null,
               )),
           const SizedBox(

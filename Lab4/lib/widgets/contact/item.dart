@@ -40,13 +40,13 @@ class ContactItem extends StatelessWidget {
         showBadge: isActive != null || lastActive != null,
         badgeContent: lastActive != null
             ? Text(
-          lastActive as String,
-          style: TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
-        )
+                lastActive as String,
+                style: TextStyle(fontSize: 7, fontWeight: FontWeight.bold),
+              )
             : const SizedBox(
-          width: 4,
-          height: 4,
-        ),
+                width: 4,
+                height: 4,
+              ),
         child: CircleAvatar(
             radius: 18,
             backgroundImage: NetworkImage(avatarUrl ??
@@ -61,8 +61,9 @@ class ContactItem extends StatelessWidget {
           ? Text(
               subtitle ?? "",
               style: TextStyle(
-                  color: Colors.grey.shade600,
-                  fontSize: 12,),
+                color: Colors.grey.shade600,
+                fontSize: 12,
+              ),
             )
           : null,
       horizontalTitleGap: 8,

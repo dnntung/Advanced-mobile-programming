@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:messenger_ui_clone/widgets/active_contact_list.dart';
-import 'package:messenger_ui_clone/widgets/chat_room_list.dart';
+import 'package:messenger_ui_clone/widgets/active_contact/list.dart'
+    as active_contacts;
+import 'package:messenger_ui_clone/widgets/chat_room/list.dart' as chat_rooms;
 
 class Chats extends StatefulWidget {
   Chats({Key? key}) : super(key: key);
@@ -18,7 +19,10 @@ class ChatsPageState extends State<Chats> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Column(
-      children: [ActiveContactList(), Expanded(child: ChatRoomList())],
+      children: [
+        active_contacts.HorizontalList(),
+        Expanded(child: chat_rooms.RoomList()),
+      ],
     );
   }
 }
