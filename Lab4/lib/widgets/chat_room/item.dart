@@ -24,22 +24,27 @@ class Room extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isHighlight = !(didRead ?? false);
-    Color badgeColor = Colors.transparent;
+    final bool _isHighlight = !(didRead ?? false);
+    Color _badgeColor = Colors.transparent;
     if (isActive ?? false) {
-      badgeColor = Colors.green;
+      _badgeColor = Colors.green;
     } else if (lastActive != null) {
-      badgeColor = Colors.greenAccent.shade100;
+      _badgeColor = Colors.greenAccent.shade100;
+    }
+
+    _joinChatRoom() {
+      Navigator.of(context).pushNamed("/chat");
     }
 
     // TODO: implement build
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8),
       child: ListTile(
+          onTap: _joinChatRoom,
           leading: Badge(
             toAnimate: false,
             position: const BadgePosition(end: 0, bottom: 0),
-            badgeColor: badgeColor,
+            badgeColor: _badgeColor,
             shape: lastActive != null ? BadgeShape.square : BadgeShape.circle,
             borderRadius: BorderRadius.circular(8),
             borderSide: const BorderSide(width: 2, color: Colors.black),
@@ -61,20 +66,20 @@ class Room extends StatelessWidget {
           title: Text(
             title,
             style: TextStyle(
-                color: isHighlight ? Colors.white : Colors.grey[600],
+                color: _isHighlight ? Colors.white : Colors.grey[600],
                 fontSize: 16,
-                fontWeight: isHighlight ? FontWeight.bold : null),
+                fontWeight: _isHighlight ? FontWeight.bold : null),
           ),
           subtitle: Row(children: [
-            _renderChatRoomContent(isHighlight),
+            _renderChatRoomContent(_isHighlight),
             Text(
               " • ",
               style: TextStyle(
-                  color: isHighlight ? Colors.white : Colors.grey[600],
+                  color: _isHighlight ? Colors.white : Colors.grey[600],
                   fontSize: 14,
-                  fontWeight: isHighlight ? FontWeight.bold : null),
+                  fontWeight: _isHighlight ? FontWeight.bold : null),
             ),
-            _renderChatRoomTime(isHighlight),
+            _renderChatRoomTime(_isHighlight),
           ]),
           trailing: Icon(
             (seen ?? false ? Icons.check_circle : Icons.check_circle_outline),
