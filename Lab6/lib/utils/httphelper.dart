@@ -4,14 +4,14 @@ import 'dart:convert';
 import 'package:food_list_demo/models/pizza.dart';
 
 class HttpHelper {
-  final String server = 'rocky.mocklab.io';
-  final String path = 'pizzalist';
+  final String server = 'pizzas.mocklab.io';
+  final String getPath = 'pizza';
   final String postPath = 'pizza';
   final String putPath = 'pizza';
   final String deletePath = 'pizza';
 
   Future<List<Pizza>> getPizzaList() async {
-    Uri url = Uri.https(server, path);
+    Uri url = Uri.https(server, getPath);
     http.Response result = await http.get(url);
     if (result.statusCode == HttpStatus.ok) {
       final jsonResponse = json.decode(result.body);
@@ -30,7 +30,6 @@ class HttpHelper {
 
     return http.post(
       url,
-      body: post,
     );
   }
 
@@ -40,12 +39,11 @@ class HttpHelper {
 
     return http.put(
       url,
-      body: put,
     );
   }
 
   Future<http.Response> deletePizza(int id) async {
     Uri url = Uri.https(server, deletePath);
-    return http.delete(url, body: id);
+    return http.delete(url);
   }
 }

@@ -37,12 +37,6 @@ class NewEditPizzaState extends State<NewEditPizza> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacementNamed('/');
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
         title: Text(p.id == null ? 'New pizza' : 'Update pizza'),
       ),
       body: Container(

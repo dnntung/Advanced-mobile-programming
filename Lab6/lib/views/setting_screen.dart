@@ -5,7 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingScreen extends StatefulWidget {
-  const SettingScreen({Key? key}) : super(key:key);
+  const SettingScreen({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -16,11 +16,11 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<StatefulWidget> {
   int appCounter = 0;
 
-  String documentsPath='';
-  String tempPath='';
+  String documentsPath = '';
+  String tempPath = '';
 
   late File myFile;
-  String fileText='';
+  String fileText = '';
 
   @override
   void initState() {
@@ -34,24 +34,22 @@ class _SettingScreenState extends State<StatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Settings'),),
-      body: Container(
-        child: Column (
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('The app has been opened $appCounter times.'),
-            Text('Document path: $documentsPath'),
-            Text('Temp path: $tempPath'),
-            ElevatedButton(
-              child: Text('Read File'),
-              onPressed: () => readFile(),
-            ),
-            Text(fileText),
-          ],
-        ),
-      )
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 8),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('The app has been opened $appCounter times.'),
+          Text('Document path: $documentsPath'),
+          Text('Temp path: $tempPath'),
+          ElevatedButton(
+            child: Text('Read File'),
+            onPressed: () => readFile(),
+          ),
+          Text(fileText),
+        ],
+      ),
     );
   }
 
@@ -62,8 +60,7 @@ class _SettingScreenState extends State<StatefulWidget> {
     appCounter++;
 
     await prefs.setInt('appCounter', appCounter);
-    setState(() {
-    });
+    setState(() {});
   }
 
   Future getPaths() async {
@@ -78,11 +75,10 @@ class _SettingScreenState extends State<StatefulWidget> {
   Future<bool> writeFile() async {
     try {
       await myFile.writeAsString('Margherita, Capricciosa, Napoli');
-          return true;
-      } catch (e)
-      {
-        return false;
-      }
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   Future<bool> readFile() async {

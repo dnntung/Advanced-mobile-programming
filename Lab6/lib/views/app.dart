@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_list_demo/models/pizza.dart';
-import 'package:food_list_demo/views/list_pizza.dart';
-import 'package:food_list_demo/views/newedit_pizza.dart';
+import 'package:food_list_demo/views/newedit_pizza_screen.dart';
 import 'home_screen.dart';
 import 'setting_screen.dart';
 import 'platform_alert.dart';
@@ -17,12 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.deepOrange,
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      // home: MyHomePage(),
-
       routes: {
         '/': (context) => MyHomePage(),
         '/add_pizza': (context) => NewEditPizza(pizza: defaultPizza),
-        '/list_pizza': (context) => ListPizzaScreen(),
       },
       initialRoute: '/',
     );
@@ -98,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Pizza defaultPizza = Pizza.createDefault();
     return IconButton(
       onPressed: () {
-        Navigator.of(context).pushReplacementNamed('/add_pizza');
+        Navigator.of(context).pushNamed('/add_pizza');
         // Navigator.push(context, MaterialPageRoute(
         //     builder: (context) => NewEditPizza(pizza: defaultPizza)
         // ));
